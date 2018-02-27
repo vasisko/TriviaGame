@@ -1,33 +1,130 @@
 // Trivia Game 
 
+
+$(document).ready(function() {
+/// Monday; figure out how to reference each question in trivia obj!!!!
+
 // declare var's
+var trivia = [
+    {question: 'question 1 blah blah blah',
+        answerA: 'answer A text here',
+        answerB: 'answer B text here',
+        answerC: 'answer C text here',
+        answerD: 'answer D text here',
+        correct: 'C',
+        image: '<img src="./assets/images/q1.gif" alt="q1 image"> '
+    },
+    {question: 'question 2 blah blah blah',
+        answerA: 'answer A text here',
+        answerB: 'answer B text here',
+        answerC: 'answer C text here',
+        answerD: 'answer D text here',
+        correct:'A'
+        },
+    {question: 'question 3 blah blah blah',
+        answerA: 'answer A text here',
+        answerB: 'answer B text here',
+        answerC: 'answer C text here',
+        answerD: 'answer D text here',
+        correct:'B'
+        }          
+    ];
 
-readyFreddy = "<p>Ready for Some Fun Facts?</p> <button id='yesready' type='button' class='btn btn-primary'>Yes!</button> <button id='notready' type='button' class='btn btn-primary'>Not yet!</button>" ;
+
+var intervalId=0;
+var clockRunning=false;
+var right=0, wrong=0;
+var result="";
+var QQ;
 
 
-// Ask player if ready to start
-$('#question').html(readyFreddy);
-    //get answer 
-   // $('document'). on('keyup', function(){
+//  -------Get ready ---------------------
+function startGame () {
+//clear timer, clear var's
+    clearInterval.intervalId;
+    clockRunning=false;
+    result="";
+    // Is player ready to start?
+    $('button').on('click', function(){
+        if ($('#yesready')) {
+        //startGame();
+        postTrivia();
+        }
+    });
+}
 
-    
-//});
-//  Player ready...Start game
 
+//------- Play! --------
 //  Reveal question and answer choices, start timer 
+function postTrivia() {
+    QQ= Math.floor(Math.random()*3);
+    console.log(QQ);
+    //var qNum = randNum.toString;
+    //var QQ ='q'+ randNum;
+    //console.log(QQ);
+    console.log(trivia[QQ].question);
+    $('#question').html('<p>' + trivia[QQ].question + '<ul><li class="guess" value="A">' + trivia[QQ].answerA + '</li><li class="guess" value="B">' + trivia[QQ].answerB + '</li><li class="guess" value="C">'+ trivia[QQ].answerC + '</li><li class="guess" value="D">'+ trivia[QQ].answerD + '</li></ul></p>');
+    gameTimer.start();
+}
+//  game timer obj: 30 sec countdown timer-----------------  
+var gameTimer = {
+    time: 30,
+    //increment timer 
+    count: function(){
+        gameTimer.time--;
+        $('#timer').html('You have ' + gameTimer.time + ' seconds left');
+    },
+    start: function() {
+        if(!clockRunning){
+        intervalId=setInterval(gameTimer.count, 1000);
+        }
+    },
+    stop: function(){
+        if (gameTimer.time===0) {
+            wrong++;
+            result="Time's Up!  The correct answer is " + trivia[QQ].correct;
+            endRound();
+        }
+    }
+};  //End of timer function----------------------------------
 
-//  while time is available....
+$(document).on('click',".guess", function(){
 
     //  listen for keyup 
-
-    //  is answer right? -- WIN 
-
+    
+    console.log(trivia[QQ]);
+//$('.guess').on('click', function(){
+    //  is answer right? -- WIN
+    if($(this).attr("value") === trivia[QQ].correct){
+        right++;
+        result='Right!  The correct answer is ' + trivia[QQ].correct;
+    }
     //  if not -- LOSE
+    else {
+        wrong++;
+        result='The correct answer is ' + trivia[QQ].correct;
+    }
+    endRound();
+});
+ 
 
-// Else:  Time's up & no answer chosen -- LOSE
-
-// display updated score, ask play again?
-
-// restart
 
 
+function endRound(){
+    // display result/right answer
+     $('#question').html('<p>' + result + '</p>');
+    // display updated score
+     $('#answerchoices').html('<p>Score:  Right= ' + right + ' Wrong= ' + wrong + '</p>');
+    // ask play again?
+    $('#timer').html("<p>Ready for MORE Fun Facts?</p> <button id='yesready' type='button' class='btn btn-primary'>Yes!</button>");
+}
+
+
+
+startGame();
+
+
+})
+
+
+ 
