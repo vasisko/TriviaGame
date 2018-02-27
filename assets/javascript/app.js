@@ -88,7 +88,7 @@ var gameTimer = {
     }
 };  //End of timer function----------------------------------
 
-$(document).on('click',".guess", function(){
+$('#question').on('click',".guess", function(){
 
     //  listen for keyup 
     
@@ -98,11 +98,13 @@ $(document).on('click',".guess", function(){
     if($(this).attr("value") === trivia[QQ].correct){
         right++;
         result='Right!  The correct answer is ' + trivia[QQ].correct;
+        clearInterval(intervalId);;
     }
     //  if not -- LOSE
     else {
         wrong++;
         result='The correct answer is ' + trivia[QQ].correct;
+        clearInterval(intervalId);;
     }
     endRound();
 });
@@ -111,12 +113,14 @@ $(document).on('click',".guess", function(){
 
 
 function endRound(){
+    console.log('right:' + right + 'wrong:' + wrong);
     // display result/right answer
      $('#question').html('<p>' + result + '</p>');
     // display updated score
-     $('#answerchoices').html('<p>Score:  Right= ' + right + ' Wrong= ' + wrong + '</p>');
+     $('#answerChoices').html('<p>Score:  Right= ' + right + ' Wrong= ' + wrong + '</p>');
     // ask play again?
     $('#timer').html("<p>Ready for MORE Fun Facts?</p> <button id='yesready' type='button' class='btn btn-primary'>Yes!</button>");
+    startGame();
 }
 
 
