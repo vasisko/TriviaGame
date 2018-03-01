@@ -6,28 +6,51 @@ $(document).ready(function() {
 
 // declare var's
 var trivia = [
-    {question: 'question 1 blah blah blah',
-        answerA: 'answer A text here',
-        answerB: 'answer B text here',
-        answerC: 'answer C text here',
-        answerD: 'answer D text here',
-        correct: 'C',
-        image: '<img src="./assets/images/q1.gif" alt="q1 image"> '
+    {question: "What is the nation's top selling candy?",
+        answerA: "Reeses",
+        answerB: "M & M's",
+        answerC: "Snickers",
+        answerD: "Hershey Bar",
+        correct: "B",
+        image: '<img src="./assets/images/mandms.jpg" width="200px" alt="q1 image">',
+        factoid: "The rock band Van Halen had it written into their contract that if members saw brown M&M's anywhere in the area, they would cancel their show."
     },
-    {question: 'question 2 blah blah blah',
-        answerA: 'answer A text here',
-        answerB: 'answer B text here',
-        answerC: 'answer C text here',
-        answerD: 'answer D text here',
-        correct:'A'
-        },
-    {question: 'question 3 blah blah blah',
-        answerA: 'answer A text here',
-        answerB: 'answer B text here',
-        answerC: 'answer C text here',
-        answerD: 'answer D text here',
-        correct:'B'
-        }          
+    {question: "How big was the diameter of the world's largest pizza?",
+        answerA: '20 feet',
+        answerB: '60 feet',
+        answerC: '100 feet',
+        answerD: '140 feet',
+        correct:'D',
+        image: '<img src="./assets/images/pizza.jpg" width="200px" alt="q1 image">',
+        factoid: ""
+    },
+    {question: "Approximately how many licks does it take to reach the center of a Tootsie Roll Pop?",
+        answerA: '57 licks',
+        answerB: '89 licks',
+        answerC: '142 licks',
+        answerD: '217 licks',
+        correct:'C',
+        image: '<img src="./assets/images/tootsierollpop.jpg" width="200px" alt="q1 image">',
+        factoid: ""
+    },
+    {question: "How many pounds of honey does a honey bee consume for each pound of wax it produces?",
+        answerA: '1 pound',
+        answerB: '3 pounds',
+        answerC: '5 pounds',
+        answerD: '7 pounds',
+        correct:'C',
+        image: '<img src="./assets/images/bee.jpg" width="200px" alt="q1 image">',
+        factoid: ""
+    },       
+    {question: "Which dog breed is not in the top 5 American Kennel Club dog breeds?",
+        answerA: 'Poodle',
+        answerB: 'German Shepherd',
+        answerC: 'Golden Retriever',
+        answerD: 'Laborador Retriever',
+        correct:'A',
+        image: '<img src="./assets/images/.jpg" width="200px" alt="q1 image">',
+        factoid: ""
+    }                
     ];
 
 
@@ -57,7 +80,8 @@ function startGame () {
 //------- Play! --------
 //  Reveal question and answer choices, start timer 
 function postTrivia() {
-    QQ= Math.floor(Math.random()*3);
+    //QQ= Math.floor(Math.random()*3); use if displaying questions randomly
+    QQ=0;
     console.log(QQ);
     //var qNum = randNum.toString;
     //var QQ ='q'+ randNum;
