@@ -7,21 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!--Link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!--<link rel="stylesheet" href=".assets/css/reset.css">-->
+
+    <!--Link to stylesheet-->
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Fun Facts Trivia Game</title>
 
 </head>
 <body>
-<div>Fun Facts Trivia</div>
-
-<div id="question">
-    <p>Ready for Some Fun Facts?</p> <button id='yesready' type='button' class='btn btn-primary'>Yes!</button>
+ 
+<!-- TITLE --> 
+<div class="container">
+    <div  class="row pt-2">
+        <div id="title" class="col"><header>Fun Facts Trivia</header></div>
+    </div>
 </div>
 
-<div id="answer"></div>
-
-<div id="timer"></div> 
+ <!-- CONTENT -->
+<div class="container">
+    <!-- ROW 1 -->
+    <div class="row bCKGROUND">
+        <div class="col" >
+            <div id="question"><p>Ready for Some Fun Facts?</p> <button id='yesready' type='button' class='btn btn-primary'>Yes!</button></div>
+        </div>
+    </div>
+    <!-- ROW 2 -->
+    <div class="row">
+        <div class="col">
+            <div id="answer"></div>
+        </div>
+    </div>
+    <!-- ROW 3 -->
+    <div class="row">
+        <div class="col">
+            <div id="timer"></div>
+        </div>
+    </div>
+</div>
+             
 
 <!-- End of HTML -->
  <!-- Link to jQuery Library -->
