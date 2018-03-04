@@ -1,10 +1,27 @@
 #title {
-    line-height: 100px;
+    line-height: 100px; 
 }
-header {
-    height: 100px;
-    background-color: rgba(197, 148, 243, 0.185);
-    font-size: 2rem;
+.card-body {
+    background-color: black;
+    color: white;
+
+}
+#question {
     text-align: center;
+  
     
+}
+#answers {
+    text-align: center;
+}
+h1 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.card {
+    border: 1px solid darkgray;
+}
+.card-text {
+    text-align: center
 }

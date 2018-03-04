@@ -19,33 +19,42 @@
 </head>
 <body>
  
-<!-- TITLE --> 
-<div class="container">
-    <div  class="row pt-2">
-        <div id="title" class="col"><header>Fun Facts Trivia</header></div>
-    </div>
-</div>
 
  <!-- CONTENT -->
 <div class="container">
     <!-- ROW 1 -->
-    <div class="row bCKGROUND">
+    <div class="row mt-1">
         <div class="col" >
-            <div id="question"><p>Ready for Some Fun Facts?</p> <button id='yesready' type='button' class='btn btn-primary'>Yes!</button></div>
-        </div>
+
+
+            <div class="card" style="width: 18rem;">
+                                
+                <div class="card-body">
+                    <h1 class="card-title">Fun Facts Trivia</h1>
+                </div>
+
+              <div class="card-content">   
+                             
+                <div id="question">
+                    <p class="card-text">Ready for some fun facts?</p>
+                    <button id='yesready' type='button' class='btn btn-primary'>Yes!</button>
+                </div>
+
+                <ul id="answers" class="list-group list-group-flush">
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+                </ul>
+                
+                
+                <div id="timer"></div>
+            </div> <!--end content div-->
+
+            
     </div>
-    <!-- ROW 2 -->
-    <div class="row">
-        <div class="col">
-            <div id="answer"></div>
-        </div>
-    </div>
-    <!-- ROW 3 -->
-    <div class="row">
-        <div class="col">
-            <div id="timer"></div>
-        </div>
-    </div>
+
+    
 </div>
              
 
