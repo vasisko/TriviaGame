@@ -19,9 +19,10 @@ h1 {
     text-align: center;
 }
 
-.card {
-    border: 1px solid darkgray;
+body {
+    background-image: url("../images/swirl_pattern.png");
 }
 .card-text {
-    text-align: center
+    text-align: center;
+    padding: .5rem;
 }
